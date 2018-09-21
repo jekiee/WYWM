@@ -140,6 +140,8 @@ public class MapsActivity extends AppCompatActivity
         } else {
             setupMap();
         }
+
+        myBroadcastReceiver.onReceive(this, null);
     }
 
     private void setupMap() {
@@ -255,12 +257,16 @@ public class MapsActivity extends AppCompatActivity
 
         private String getUrl(double latitude, double longitude, String nearbyPlace) {
             StringBuilder googlePlacesUrl = new
-                    StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
-            googlePlacesUrl.append("location=" + latitude + "," + longitude);
-            googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
-            googlePlacesUrl.append("&type=" + nearbyPlace);
-            googlePlacesUrl.append("&sensor=true");
-            googlePlacesUrl.append("&key=" + "AIzaSyATuUiZUkEc_UgHuqsBJa1oqaODI-3mLs0");
+                    StringBuilder("https://api.foursquare.com/v2/venues/search?");
+            googlePlacesUrl.append("ll=" + latitude + "," + longitude);
+            googlePlacesUrl.append("&client_id=4X1TB3I4DEDF3GGNTPP4IMAEVL2A23DKTEX3ACOAZ5GTTQ3H");
+            googlePlacesUrl.append("&client_secret=XZQL5WZDKFU2GTZJHWLPYQMWZROZZLMIMAB5RVY4PFBYBBUS");
+            googlePlacesUrl.append("&categoryId=4f04ae1f2fb6e1c99f3db0ba");
+            googlePlacesUrl.append("&v=20120609");
+            //googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
+            //googlePlacesUrl.append("&type=" + nearbyPlace);
+            //googlePlacesUrl.append("&sensor=true");
+            //googlePlacesUrl.append("&key=AIzaSyBJbsJZqcNgnCszbE3l66sqbKoxBVaI0JQ");
             return (googlePlacesUrl.toString());
         }
     }
