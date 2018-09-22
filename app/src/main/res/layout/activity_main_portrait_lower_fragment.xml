@@ -5,6 +5,7 @@
     android:id="@+id/landscapeLowerFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/image"
     tools:context="com.example.jek.whenyouwashme.activity.WeatherForecastActivity">
 
     <View
@@ -59,6 +60,8 @@
         android:layout_below="@id/textSetTimeAfterLastCarWash"
         android:layout_toLeftOf="@id/horizontal_anchor"
         android:text="Nearest \ncar washes"
+        android:background="@xml/buttonstyle"
+        android:layout_margin="8dp"
         android:textSize="22sp"
         app:layout_heightPercent="35%" />
 
@@ -66,10 +69,12 @@
         android:id="@+id/bWashed"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_alignParentRight="true"
         android:layout_below="@id/textTimeAftertLastCarWash"
         android:layout_toRightOf="@id/horizontal_anchor"
         android:text="Washed"
+        android:background="@xml/buttonstyle"
         android:textSize="22sp"
         app:layout_heightPercent="35%" />
 
